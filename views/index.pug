@@ -1,0 +1,15 @@
+extends layout
+
+block stylesheet
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
+block content
+  h1= title
+  p Welcome to #{title}
+  a(href='/new') New Message 
+  ul
+    each item in messages
+      li
+        p User: #{item.user}
+        p Message: #{item.text}
+        p Timestamp: #{item.added}
